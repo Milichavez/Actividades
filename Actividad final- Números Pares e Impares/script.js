@@ -2,7 +2,7 @@ function pedirNumero() { // Función para pedirle al usuario el número entero p
     let numero;
     do {
       numero = parseInt(prompt("Ingresa un número entero positivo:")); 
-    } while (numero <= 0); // Verifica si el número no es un número válido o es menor o igual a cero
+    } while (isNan(numero) || numero <= 0); // Verifica si el número no es un número válido o es menor o igual a cero
     return numero; // Devuelve el número válido ingresado por el usuario
   }
   
@@ -26,7 +26,7 @@ function pedirNumero() { // Función para pedirle al usuario el número entero p
     }
   }
   
-  function start() { // Lógica principal del programa
+  function start() {
     const numero = pedirNumero(); // Solicita el número entero positivo al usuario usando la función pedirNumero()
     mostrarNumeros(numero); // Muestra por consola los números pares e impares utilizando la función mostrarNumeros()
   }
